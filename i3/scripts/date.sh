@@ -8,4 +8,4 @@ case $BLOCK_BUTTON in
 
 esac
 
-date '+%H:%M'%  
+date '+%H:%M'
