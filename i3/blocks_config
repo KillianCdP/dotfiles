@@ -1,0 +1,147 @@
+# We use the global settings as a shortcut to define our own separator.
+# Based on the default i3blocks config file.
+
+#full_text=][
+full_text=|
+align=center
+color=#FFFDD0
+separator=false
+separator_block_width=5
+
+[separator]
+
+full_text=|
+#full_text=[
+align=center
+color=#FFFDD0
+separator=false
+separator_block_width=5
+
+[volume]
+#label=♪
+label=:
+command=~/.config/i3/scripts/volume.sh
+color=#1793D1
+interval=once
+signal=10
+
+[separator]
+
+[weather label]
+color=#d11793
+full_text=  :
+#full_text=☂ฺ ☀ฺ Weather ☂ฺ ☀ฺ
+#separator=false
+
+[weather]
+#command=~/weather.sh "ASI|CN|CH024|SHANGHAI"
+command=~/.config/i3/scripts/iconweather.sh "EUR|FR|06|ROQUEFORT-LES-PINS"
+interval=30
+color=#d11793
+#separator=false
+
+[separator]
+
+#[root label]
+#color=#d15517
+#full_text= /:
+#full_text=☂ฺ ☀ฺ Weather ☂ฺ ☀ฺ
+#separator=false
+
+#[root]
+#command=df -h | grep /dev/sda2 | awk '{print $3,$2,$5}'
+#command=/home/killian/.config/i3/scripts/memory
+#color=#d15517
+#interval=30
+
+[cpu]
+label= CPU:
+command=/home/killian/.config/i3/scripts/cpu_usage
+#command=top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}'
+color=#d15517
+min_width=CPU: 100.00%
+interval=10
+
+[separator]
+
+[Memory]
+label=:
+command=/home/killian/.config/i3/scripts/partitions.sh
+color=#17d155
+separator=false
+interval=30
+
+[separator]
+
+[disk-home]
+label=:
+command=/home/killian/.config/i3/scripts/disk $HOME
+color=#17d155
+interval=30
+
+[separator]
+
+[SSID]
+label=:
+command=echo "$(iw dev wlan0 link | grep SSID | cut -d " " -f 2-)"
+interval=20
+color=#F6B032
+
+[wifi]
+
+command=/home/killian/.config/i3/scripts/network wlan0 W
+color=#F6B032
+interval=10
+
+[separator]
+
+[download]
+label=:
+command=~/.config/i3/scripts/bandwidth.sh rx
+#min_width=0000 kB/s
+align=left
+color=#1793D1
+interval=1 # IMPORTANT
+min_width=: 100 kB/s
+#separator=false
+
+[upload]
+label=:
+command=~/.config/i3/scripts/bandwidth.sh tx
+min_width=: 100 kB/s
+align=right
+color=#d15517
+interval=1 # IMPORTANT
+
+[separator]
+
+[battery]
+command=/usr/lib/i3blocks/battery BAT0
+interval=30
+
+#[Date]
+#label=:
+#command=date '+%a %b %d, %Y'
+#color=#FFFDD0
+#interval=5
+
+#[separator]
+
+[Time]
+label=:
+#label=:
+#command=date '+%H:%M'
+command=~/.config/i3/scripts/date.sh
+color=#FFFDD0
+interval=5
+
+[separator]
+#full_text=]
+full_text=|
+align=center
+color=#FFFDD0
+separator=false
+separator_block_width=5
+
+
+

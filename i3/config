@@ -180,8 +180,7 @@ for_window [class="^.*"] border pixel 3
 #}
 
 bar {
-    status_command i3blocks
-    i3bar_command i3bar -t
+    status_command i3blocks -c /home/killian/.config/i3/blocks_config
     position bottom
     font pango:Hack, FontAwesome 8
     height 20
@@ -191,7 +190,7 @@ bar {
         background  #000000 
         separator   #FFFFFF
 
-#                          BORDER       BACKGROUND   TEXT
+        #                  BORDER       BACKGROUND   TEXT
         focused_workspace  #000000      #F8FF21      #000000
         inactive_workspace #000000      $status_bg   #BDC6C9 
         active_workspace   #000000      $background  $secondary
@@ -216,10 +215,9 @@ bindsym --release Shift+Print exec --no-startup-id "maim -s -p 0 -c 0.96,0.5,0.0
 
 
 
-
 exec --no-startup-id nm-applet
 
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 70 -padding 20 -opacity "85" -bc "black" -bg "black"
 
 exec --no-startup-id feh --bg-fill /home/killian/Images/wallpapers/hexagones.png
-exec --no-startup-id compton -b
+#exec --no-startup-id compton -b
