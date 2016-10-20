@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindcode $mod+49 exec urxvt 
+bindcode $mod+49 exec xfce4-terminal 
 # Start firefox
 bindsym $mod+g exec firefox
 # kill focused window
@@ -210,14 +210,14 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym --release Print exec --no-startup-id "maim -p 0 -c 0.96,0.5,0.09 $HOME/Images/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
-bindsym --release Shift+Print exec --no-startup-id "maim -s -p 0 -c 0.96,0.5,0.09 $HOME/Images/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
+bindsym --release Print exec --no-startup-id "maim -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
+bindsym --release Shift+Print exec --no-startup-id "maim -s -p 0 -c 0.96,0.5,0.09 $HOME/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
 
 
 
 exec --no-startup-id nm-applet
 
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 70 -padding 20 -opacity "85" -bc "black" -bg "black"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 70 -padding 20 -opacity "85"
+
 
 exec --no-startup-id feh --bg-fill /home/killian/Images/wallpapers/hexagones.png
-#exec --no-startup-id compton -b
